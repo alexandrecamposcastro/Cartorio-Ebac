@@ -100,50 +100,63 @@ int main()
 {
     int opcao = 0; //devo armazenar essa variável em 0 para que o computador não defina o valor dela aleatoriamente
     int laco = 1;
+    char senhadigitada[] = "a";
+    int comparacao;
 
-    for (laco=1;(laco=1);)
-    {
+    printf("### Cartório da EBAC ###\n\n");
+    printf("Login de Administrador!\n\nDigite sua senha: ");
+    scanf("%s", senhadigitada);
 
+    comparacao = strcmp(senhadigitada, "admin");
+
+    if(comparacao == 0) {
         system("cls");
-    
-        setlocale(LC_ALL, ""); // Faz a máquina entender que estou usando a língua portuguesa
-
-        printf("\t#### Cartório ####\n\n");
-        printf("\tEscolha a opção desejada:\n\n");
-        printf("\t1 - Registrar nomes\n");
-        printf("\t2 - Consultar nomes\n");
-        printf("\t3 - Deletar nomes\n");
-        printf("\t4 - Sair do sistema\n");
-        printf("Opção:");
-
-        scanf("%d", &opcao); //%d significa que irei usar um input de tipo inteiro e o & indica que armazenarei o inteiro na variavel opcao
-        system("cls"); //deleta o que estava no console
-
-        switch(opcao)
+        for (laco=1;(laco=1);)
         {
-            case 1:
-            registro();
-            break;
 
-            case 2:
-            consulta();
-            break;
+            system("cls");
+    
+            setlocale(LC_ALL, ""); // Faz a máquina entender que estou usando a língua portuguesa
 
-            case 3:
-            deletar();
-            break;
+            printf("\t#### Cartório ####\n\n");
+            printf("\tEscolha a opção desejada:\n\n");
+            printf("\t1 - Registrar nomes\n");
+            printf("\t2 - Consultar nomes\n");
+            printf("\t3 - Deletar nomes\n");
+            printf("\t4 - Sair do sistema\n");
+            printf("Opção:");
 
-            case 4:
-            printf("Obrigado por utilizar o sistema!\n");
-            return 0;
-            break;
+            scanf("%d", &opcao); //%d significa que irei usar um input de tipo inteiro e o & indica que armazenarei o inteiro na variavel opcao
+            system("cls"); //deleta o que estava no console
 
-            default:
-            printf("Essa opção não está disponível\n");
-            printf("Volte para o menu: ");
-            system("pause");
-            break;
+            switch(opcao)
+            {
+                case 1:
+                 registro();
+                break;
+
+                case 2:
+                consulta();
+                break;
+
+                case 3:
+                deletar();
+                break;
+
+                case 4:
+                printf("Obrigado por utilizar o sistema!\n");
+                return 0;
+                break;
+
+                default:
+                printf("Essa opção não está disponível\n");
+                printf("Volte para o menu: ");
+                system("pause");
+                break;
+            }
         }
-
     }
+    
+    else
+       printf("Senha incorreta");
 }
